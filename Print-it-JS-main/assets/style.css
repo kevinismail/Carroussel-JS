@@ -131,6 +131,11 @@ header {
 }
 #banner .arrow_right {
 	right: 10px;
+	
+}
+.arrow {
+	border: none;
+	background: transparent;
 }
 /* Gestion des points du carrousel */
 .dots {
