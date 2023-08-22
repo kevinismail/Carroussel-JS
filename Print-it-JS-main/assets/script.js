@@ -20,7 +20,7 @@ const slides = [
 ];
 
 
-// Déclaration variables flèches
+// ETAPE 2 : flèches
 
 const rightArrow = document.querySelector(".arrow_right");
 const leftArrow =document.querySelector('.arrow_left');
@@ -35,3 +35,42 @@ function handleLeftClick() {
 	console.log('Clic gauche');
 }
 
+// ETAPE 3 : bullets
+
+// Récupérer les points existants
+const dots = document.querySelectorAll('.dot');
+
+// Compter le nombre de points
+let numDots = dots.length;
+
+// Définir le point actif
+let currentDot = 0;
+
+// Rendre le premier point actif
+dots[currentDot].classList.add('dot_selected');
+
+// Fonction pour changer le point actif
+function changeDot() {
+
+dots[currentDot].classList.remove('dot_selected');
+
+currentDot++;
+
+if(currentDot >= numDots) {
+currentDot = 0;
+}
+
+dots[currentDot].classList.add('dot_selected');
+
+}
+
+// Gestion des événements
+rightArrow.addEventListener('click', changeDot);
+
+dots.forEach(dot => {
+dot.addEventListener('click', changeSlide)
+});
+
+
+
+// ETAPE 4 ! 
