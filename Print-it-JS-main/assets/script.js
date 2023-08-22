@@ -19,6 +19,8 @@ const slides = [
 	}
 ];
 
+console.log('images du carroussel chargées');
+
 
 // ETAPE 2 : flèches
 
@@ -68,9 +70,29 @@ dots[currentDot].classList.add('dot_selected');
 rightArrow.addEventListener('click', changeDot);
 
 dots.forEach(dot => {
-dot.addEventListener('click', changeSlide)
+dot.addEventListener('click', nextSlide)
 });
 
 
 
 // ETAPE 4 ! 
+
+//selection des éléments
+const slideImage = document.querySelector('banner-img');
+const slidetexte = document.querySelector('slide-text');
+
+let currentSlide = 0;
+
+function nextSlide() {
+	changeDot();
+	const current = slides[currentSlide];
+	slideImage.src = current.image;
+	slideText.innerHTML = current.tagLine;
+
+	currentSlide++;
+	if(currentSlide >= slides.length) {
+		currentSlide = 0
+	}
+}
+
+rightArrow.addEventListener('click', nextSlide);
