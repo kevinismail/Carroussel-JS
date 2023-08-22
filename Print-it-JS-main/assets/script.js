@@ -20,12 +20,18 @@ const slides = [
 ];
 
 
-// Sélection des éléments 
+// Déclaration variables flèches
 
-const banner = document.getElementById('banner');
-const slides = document.querySelectorAll('banner-img');
-const prevBtn = document.querySelector('.arrow_left');
-const nextBtn = document.querySelector('arrow_right');
+const rightArrow = document.querySelector(".arrow_right");
+const leftArrow =document.querySelector('.arrow_left');
 
+rightArrow.addEventListener('click', handleRightClick);
+leftArrow.addEventListener('click', handleLeftClick);
 
+function handleRightClick() {
+	console.log('click droit');
+}
+function handleLeftClick() {
+	console.log('Clic gauche');
+}
 
