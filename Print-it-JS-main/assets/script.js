@@ -99,9 +99,7 @@ function changeDot(dir) {
 	dots[currentDot].classList.remove('dot_selected');  
   
 	if(currentSlide === 0 && direction === 'next') {
-	  currentDot = numDots - 1;
-	} else if(currentSlide === slides.length - 1 && direction === 'prev') {
-	  currentDot = 0;
+	  currentDot = numDots + 1;
 	} else if(direction === 'next') {
 	  currentDot++; 
 	} else {
