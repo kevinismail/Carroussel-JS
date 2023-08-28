@@ -115,7 +115,7 @@ function changeDot(dir) {
 	if(currentDot >= numDots) {
 	  currentDot = 0;
 	}
-  
+  console.log(currentDot)
 	// Ajouter classe active
 	dots[currentDot].classList.add('dot_selected');
   
@@ -123,29 +123,7 @@ function changeDot(dir) {
 
 // Gestion des événements
 
-dots.forEach(dot => {
 
-	dot.addEventListener('click', () => {
-  
-	  // Changer slide au clic
-	  currentDot = dots.indexOf(dot);
-	  displaySlide(); 
-	  changeDot();
-  
-	});
-});  
-
-// ETAPE 4 ! 
-
-//selection des éléments
-
-
-	changeDot();
-	const current = slides[currentSlide];
-	slideImage.src = current.image;
-	slideText.innerHTML = current.tagLine;
-
-	
 
 
 function displaySlide() {
